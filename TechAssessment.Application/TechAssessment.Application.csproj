@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>TechAssessment.Application</AssemblyName>
+    <RootNamespace>TechAssessment.Application</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="BusinessLogic\" />
+    <Folder Include="BusinessLogic\PhoneBooks\" />
+    <Folder Include="BusinessLogic\Users\" />
+    <Folder Include="BusinessLogic\Users\Commands\" />
+    <Folder Include="BusinessLogic\PhoneBooks\Queries\" />
+    <Folder Include="BusinessLogic\PhoneBooks\Models\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Interfaces\Mapping\" />
+    <Folder Include="Interfaces\Infrastructure\" />
+    <Folder Include="Interfaces\Infrastructure\AutoMapper\" />
+    <Folder Include="Interfaces\Infrastructure\Logger\" />
+    <Folder Include="Interfaces\Infrastructure\Validation\" />
+    <Folder Include="Exceptions\" />
+    <Folder Include="BusinessLogic\Users\Validators\" />
+    <Folder Include="BusinessLogic\Users\Queries\" />
+    <Folder Include="BusinessLogic\Users\Models\" />
+    <Folder Include="BusinessLogic\Entries\" />
+    <Folder Include="BusinessLogic\Entries\Models\" />
+    <Folder Include="BusinessLogic\Entries\Commands\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="BusinessLogic\Entries\Queries\" />
+    <Folder Include="BusinessLogic\Entries\Validators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="FluentValidation" Version="8.1.1" />
+    <PackageReference Include="MediatR" Version="5.1.0" />
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\TechAssessment.Domain\TechAssessment.Domain.csproj" />
+    <ProjectReference Include="..\TechAssessment.Persistance\TechAssessment.Persistance.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>..\..\..\..\..\usr\local\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\..\..\..\usr\local\share\dotnet\sdk\NuGetFallbackFolder\system.identitymodel.tokens.jwt\5.2.0\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\..\..\..\..\..\usr\local\share\dotnet\sdk\NuGetFallbackFolder\system.identitymodel.tokens.jwt\5.2.0\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens">
+      <HintPath>..\..\..\..\..\..\..\usr\local\share\dotnet\sdk\NuGetFallbackFolder\microsoft.identitymodel.tokens\5.2.0\lib\netstandard1.4\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Helpers\AppSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BusinessLogic\Subscriptions\Commands\UnsubscribeCommand.cs" />
+    <Compile Remove="BusinessLogic\Subscriptions\Commands\UnsubscribeCommandHandler.cs" />
+  </ItemGroup>
+</Project>

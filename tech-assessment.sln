@@ -1,0 +1,47 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechAssessment.Application", "TechAssessment.Application\TechAssessment.Application.csproj", "{D953D34A-BCD5-40E2-B208-83B1444CC360}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechAssessment.Persistance", "TechAssessment.Persistance\TechAssessment.Persistance.csproj", "{626227A2-6F83-4ADC-8200-8DAF3611193C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechAssessment.Presentation", "TechAssessment.Presentation\TechAssessment.Presentation.csproj", "{349761E6-E6E6-4F4D-A122-4C3A9946FE5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechAssessment.Tests", "TechAssessment.Tests\TechAssessment.Tests.csproj", "{0E6113D1-4755-4F27-8150-096A9F7CD5D7}"
+EndProject
+Project("{9344BDBB-3E7F-41FC-A0DD-8665D75EE146}") = "TechAssessment.Domain", "TechAssessment.Domain\TechAssessment.Domain.csproj", "{BCBCD075-9CEA-400A-961E-5B1B9ADADB77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D953D34A-BCD5-40E2-B208-83B1444CC360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D953D34A-BCD5-40E2-B208-83B1444CC360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D953D34A-BCD5-40E2-B208-83B1444CC360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D953D34A-BCD5-40E2-B208-83B1444CC360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626227A2-6F83-4ADC-8200-8DAF3611193C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626227A2-6F83-4ADC-8200-8DAF3611193C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626227A2-6F83-4ADC-8200-8DAF3611193C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626227A2-6F83-4ADC-8200-8DAF3611193C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349761E6-E6E6-4F4D-A122-4C3A9946FE5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349761E6-E6E6-4F4D-A122-4C3A9946FE5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349761E6-E6E6-4F4D-A122-4C3A9946FE5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349761E6-E6E6-4F4D-A122-4C3A9946FE5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E6113D1-4755-4F27-8150-096A9F7CD5D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E6113D1-4755-4F27-8150-096A9F7CD5D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E6113D1-4755-4F27-8150-096A9F7CD5D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E6113D1-4755-4F27-8150-096A9F7CD5D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBCD075-9CEA-400A-961E-5B1B9ADADB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBCD075-9CEA-400A-961E-5B1B9ADADB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBCD075-9CEA-400A-961E-5B1B9ADADB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBCD075-9CEA-400A-961E-5B1B9ADADB77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.VersionControlPolicy = $1
+	EndGlobalSection
+EndGlobal

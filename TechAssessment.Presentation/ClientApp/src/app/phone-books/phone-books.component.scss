@@ -1,0 +1,43 @@
+.container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+.hide {
+  display: none;
+}
+
+.right-align {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.center-align {
+  display: flex;
+  justify-content: center;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.search-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}

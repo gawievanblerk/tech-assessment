@@ -1,0 +1,22 @@
+{
+  "APP_NAME": "Technical Assessment",
+  "About": "About",
+  "Phone Books": "Phone Books",
+  "Username": "Username",
+  "Hello": "Hello",
+  "Home": "Home",
+  "My Library":  "My Library",
+  "Logged in as": "Logged in as",
+  "Login": "Login",
+  "Logout": "Logout",
+  "Password": "Password",
+  "Password is required": "Password is required",
+  "Username is required": "Username is required",
+  "Username not registered.": "Username not registered.",
+  "Remember me": "Remember me",
+  "Version": "Version",
+  "Register": "Register",
+  "Firstname": "Firstname",
+  "Lastname": "Lastname"
+
+}

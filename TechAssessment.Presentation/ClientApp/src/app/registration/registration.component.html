@@ -1,0 +1,64 @@
+<div fxFill fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="1.5rem" class="mat-typography">
+  <div>
+    <h1 fxLayoutAlign="center" translate>APP_NAME</h1>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2rem">
+      <h4 class="version">v{{version}}</h4>
+      <div class="language-selector">
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="languageMenu">
+          {{currentLanguage}}
+        </button>
+        <mat-menu #languageMenu="matMenu">
+          <button mat-menu-item *ngFor="let language of languages" (click)="setLanguage(language)">
+            {{language}}
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+  <div class="registration-container" fxLayout="row" fxLayoutAlign="center">
+    <mat-card fxFlex="90%" fxFlex.sm="66%" fxFlex.md="50%" fxFlex.gt-md="33%" class="registration-box">
+    <h2 fxLayoutAlign="center" translate>Register</h2>
+      <form (ngSubmit)="register()" [formGroup]="registrationForm" novalidate>
+        <div class="registration-error" [hidden]="!error || isLoading" translate>
+          Username registration failed.
+        </div>
+        <br/>
+        <div fxLayout="column">
+          <mat-form-field>
+            <input type="text" matInput formControlName="firstName" autocomplete="firstName"
+                   [placeholder]="'Firstname' | translate"/>
+            <mat-error *ngIf="registrationForm.controls.firstName.valid || registrationForm.controls.firstName.untouched">
+              <span translate>Firstname is required</span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput formControlName="lastName" autocomplete="lastName"
+                   [placeholder]="'Lastname' | translate"/>
+            <mat-error *ngIf="registrationForm.controls.lastName.valid || registrationForm.controls.lastName.untouched">
+              <span translate>Lastname is required</span>
+            </mat-error>
+          </mat-form-field>
+
+           <mat-form-field>
+            <input type="text" matInput formControlName="username" autocomplete="username"
+                   [placeholder]="'Username' | translate"/>
+            <mat-error *ngIf="registrationForm.controls.username.valid || registrationForm.controls.username.untouched">
+              <span translate>Username is required</span>
+            </mat-error>
+          </mat-form-field>
+          <br/>
+          <mat-dialog-actions>
+            <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid || isLoading" translate><span translate>Register</span></button>
+                        
+                  <button mat-button routerLink="/login" routerLinkActive="active">
+          <mat-icon>lock_open</mat-icon>
+          <span translate>Login</span>
+      </button>
+            <img *ngIf="isLoading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+          </mat-dialog-actions>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>
+

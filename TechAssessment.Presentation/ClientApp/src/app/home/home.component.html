@@ -1,0 +1,13 @@
+<div class="container">
+  <mat-card>
+    <p>
+      <img class="logo" src="assets/phone_book.png" alt="Phone Book"/>
+    </p>
+    <mat-card-content>
+      <mat-card-title><span translate>Hello</span> {{fullName}} !</mat-card-title>
+      <mat-card-subtitle>
+        <app-loader [isLoading]="isLoading" size="1.5"></app-loader>  
+      </mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+</div>

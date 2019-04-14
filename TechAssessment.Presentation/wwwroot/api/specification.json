@@ -1,0 +1,321 @@
+﻿{
+  "x-generator": "NSwag v12.0.8.0 (NJsonSchema v9.13.9.0 (Newtonsoft.Json v11.0.0.0))",
+  "swagger": "2.0",
+  "info": {
+    "title": "TechAssessment API",
+    "version": "1.0.0"
+  },
+  "consumes": [
+    "application/json-patch+json",
+    "application/json",
+    "text/json",
+    "application/*+json"
+  ],
+  "paths": {
+    "/api/Entries/AddEntryToPhonebook": {
+      "post": {
+        "tags": [
+          "Entries"
+        ],
+        "operationId": "Entries_AddEntryToPhonebook",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddEntryToPhonebookCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/Entries/SearchPhonebookEntry": {
+      "get": {
+        "tags": [
+          "Entries"
+        ],
+        "operationId": "Entries_SearchPhonebookEntry",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "SearchString",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EntryListViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/PhoneBooks/GetAllPhoneBooks": {
+      "get": {
+        "tags": [
+          "PhoneBooks"
+        ],
+        "operationId": "PhoneBooks_GetAllPhoneBooks",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/PhoneBookListViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/PhoneBooks/GetPhoneBookEntries": {
+      "get": {
+        "tags": [
+          "PhoneBooks"
+        ],
+        "operationId": "PhoneBooks_GetPhoneBookEntries",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "integer",
+            "name": "PhoneBookId",
+            "in": "query",
+            "required": true,
+            "format": "int32",
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EntryListViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/PhoneBooks/AddEntry": {
+      "post": {
+        "tags": [
+          "PhoneBooks"
+        ],
+        "operationId": "PhoneBooks_AddEntry",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddEntryToPhonebookCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": false,
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/CheckUserRegistration": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "Users_CheckUserRegistration",
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "type": "string",
+            "name": "Username",
+            "in": "query",
+            "required": true,
+            "x-nullable": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "x-nullable": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UserViewModel"
+            }
+          }
+        }
+      }
+    },
+    "/api/Users/Register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "operationId": "Users_Register",
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "name": "command",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegisterUserCommand"
+            },
+            "x-nullable": false
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddEntryToPhonebookCommand": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entry": {
+          "$ref": "#/definitions/EntryViewModel"
+        }
+      }
+    },
+    "EntryViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "phoneBookId"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phoneNumber": {
+          "type": "string"
+        },
+        "phoneBookId": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "EntryListViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {}
+        }
+      }
+    },
+    "PhoneBookListViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phoneBooks": {
+          "type": "array",
+          "items": {}
+        }
+      }
+    },
+    "UserViewModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "username": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "RegisterUserCommand": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/UserViewModel"
+        }
+      }
+    }
+  }
+}
